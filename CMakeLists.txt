@@ -3,4 +3,6 @@ project(Student_Management_System C)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(Student_Management_System main.c)
+add_executable(Student_Management_System main.c
+        newFeatures.c)
+add_executable(newFeatures newFeatures.c)

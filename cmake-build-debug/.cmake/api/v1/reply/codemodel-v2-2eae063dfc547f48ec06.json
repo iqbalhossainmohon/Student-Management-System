@@ -15,7 +15,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -30,7 +31,8 @@
 					"name" : "Student_Management_System",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -39,8 +41,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Student_Management_System::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Student_Management_System-Debug-ea21303c9c5d7646a255.json",
+					"jsonFile" : "target-Student_Management_System-Debug-244607147d58342f9776.json",
 					"name" : "Student_Management_System",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "newFeatures::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-newFeatures-Debug-d8de66c76351ddde5ddc.json",
+					"name" : "newFeatures",
 					"projectIndex" : 0
 				}
 			]
