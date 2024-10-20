@@ -218,8 +218,11 @@ void searchStudent() {
     while (fgets(line, sizeof(line), file)) {
         sscanf(line, "%d,%[^,],%d,%f", &student.rollNo, student.name, &student.age, &student.grade);
         if (student.rollNo == rollNo) {
-            printf("Record found:\nRoll No: %d\nName: %s\nAge: %d\nGrade: %.2f\n",
-                    student.rollNo, student.name, student.age, student.grade);
+            printf("\n========== Search Student Record ========== \n"
+                   " Roll No \t\t Name \t\t\t Age \t Grade \n");
+
+            printf(" %d \t\t\t %s \t\t %d \t %.2f\n",
+                student.rollNo, student.name, student.age, student.grade);
             found = 1;
             break;
         }
