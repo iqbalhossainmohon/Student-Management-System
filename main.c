@@ -241,7 +241,8 @@ int main() {
 
     while (1) {
         printf("\n=============== Student Management System ===============\n");
-        printf("\n1. Register\n2. Login\n3. Add Student\n4. View Students\n5. Update Student\n6. Delete Student\n7. Search Student\n8. Exit\n");
+        printf("\n1. Register\n2. Login\n3. Add Student\n4. View Students\n"
+               "5. Update Student\n6. Delete Student\n7. Search Student\n8. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
