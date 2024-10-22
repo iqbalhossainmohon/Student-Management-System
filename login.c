@@ -26,7 +26,7 @@ int loginUser(char *email, char *password) {
 
     char line[100];
     while (fgets(line, sizeof(line), file)) {
-        sscanf(line, "%[^,], %[^,],%s", user.email,user.username, user.password);
+        sscanf(line, "%[^,], %[^,], %s", user.email, user.username, user.password);
         if (strcmp(user.email, email) == 0 && strcmp(user.password, password) == 0) {
             fclose(file);
             return 1;  // Successful login
