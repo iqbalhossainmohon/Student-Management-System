@@ -1,3 +1,5 @@
 F:/Softwer Development Project/Student Management System/cmake-build-debug/CMakeFiles/Student_Management_System.dir
+F:/Softwer Development Project/Student Management System/cmake-build-debug/CMakeFiles/login.dir
+F:/Softwer Development Project/Student Management System/cmake-build-debug/CMakeFiles/student.dir
 F:/Softwer Development Project/Student Management System/cmake-build-debug/CMakeFiles/edit_cache.dir
 F:/Softwer Development Project/Student Management System/cmake-build-debug/CMakeFiles/rebuild_cache.dir
