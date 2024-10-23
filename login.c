@@ -10,7 +10,8 @@
 void saveUser(struct User user) {
     FILE *file = fopen(USER_FILE, "a");
     if (file != NULL) {
-        fprintf(file, "%s, %s, %s\n", user.email, user.username, user.password);
+        fprintf(file, "%s, %s, %s, %s, %s, %s, %s\n", user.email,
+            user.username, user.fristName, user.lestName, user.gender, user.phone, user.password);
         fclose(file);
     }
 }
@@ -25,9 +26,11 @@ int loginUser(char *email, char *password) {
         return 0;
     }
 
-    char line[100];
+    char line[200];
     while (fgets(line, sizeof(line), file)) {
-        sscanf(line, "%[^,], %[^,], %s", user.email, user.username, user.password);
+
+        sscanf(line, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%s", user.email,
+               user.username, user.fristName, user.lestName, user.gender, user.phone, user.password);
         if (strcmp(user.email, email) == 0 && strcmp(user.password, password) == 0) {
             fclose(file);
             setLoginStatus(1);  // Set user as logged in
@@ -41,12 +44,25 @@ int loginUser(char *email, char *password) {
 // Function to register a new user
 void registerUser() {
     struct User newUser;
+
+    printf("Enter your First Name: ");
+    scanf("%s", newUser.fristName);
+    printf("Enter your Lest Name: ");
+    scanf("%s", newUser.lestName);
+
     printf("Enter email address: ");
     scanf("%s", newUser.email);
-    printf("Enter a username: ");
-    scanf("%s", newUser.username);
     printf("Enter a password: ");
     scanf("%s", newUser.password);
+    printf("Enter a username: ");
+    scanf("%s", newUser.username);
+
+    printf("Enter your Gender: ");
+    scanf("%s", newUser.gender);
+    printf("Enter your Phone Number: ");
+    scanf("%s", newUser.phone);
+
+
 
     saveUser(newUser);
     printf("Registration successful.\n");
@@ -63,6 +79,6 @@ void login() {
     if (loginUser(email, password)) {
         printf("Login successful! Welcome, %s.\n", email);
     } else {
-        printf("Invalid username or password.\n");
+        printf("Invalid Email or Password.\n");
     }
 }
