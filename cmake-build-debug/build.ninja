@@ -67,6 +67,12 @@ build CMakeFiles/Student_Management_System.dir/student.c.obj: C_COMPILER__Studen
   OBJECT_DIR = CMakeFiles\Student_Management_System.dir
   OBJECT_FILE_DIR = CMakeFiles\Student_Management_System.dir
 
+build CMakeFiles/Student_Management_System.dir/logout.c.obj: C_COMPILER__Student_Management_System_unscanned_Debug F$:/Softwer$ Development$ Project/Student$ Management$ System/logout.c || cmake_object_order_depends_target_Student_Management_System
+  DEP_FILE = CMakeFiles\Student_Management_System.dir\logout.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Student_Management_System.dir
+  OBJECT_FILE_DIR = CMakeFiles\Student_Management_System.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Student_Management_System
@@ -75,7 +81,7 @@ build CMakeFiles/Student_Management_System.dir/student.c.obj: C_COMPILER__Studen
 #############################################
 # Link the executable Student_Management_System.exe
 
-build Student_Management_System.exe: C_EXECUTABLE_LINKER__Student_Management_System_Debug CMakeFiles/Student_Management_System.dir/main.c.obj CMakeFiles/Student_Management_System.dir/login.c.obj CMakeFiles/Student_Management_System.dir/student.c.obj
+build Student_Management_System.exe: C_EXECUTABLE_LINKER__Student_Management_System_Debug CMakeFiles/Student_Management_System.dir/main.c.obj CMakeFiles/Student_Management_System.dir/login.c.obj CMakeFiles/Student_Management_System.dir/student.c.obj CMakeFiles/Student_Management_System.dir/logout.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Student_Management_System.dir
@@ -151,6 +157,39 @@ build student.exe: C_EXECUTABLE_LINKER__student_Debug CMakeFiles/student.dir/stu
   TARGET_IMPLIB = libstudent.dll.a
   TARGET_PDB = student.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target logout
+
+
+#############################################
+# Order-only phony target for logout
+
+build cmake_object_order_depends_target_logout: phony || CMakeFiles/logout.dir
+
+build CMakeFiles/logout.dir/logout.c.obj: C_COMPILER__logout_unscanned_Debug F$:/Softwer$ Development$ Project/Student$ Management$ System/logout.c || cmake_object_order_depends_target_logout
+  DEP_FILE = CMakeFiles\logout.dir\logout.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\logout.dir
+  OBJECT_FILE_DIR = CMakeFiles\logout.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target logout
+
+
+#############################################
+# Link the executable logout.exe
+
+build logout.exe: C_EXECUTABLE_LINKER__logout_Debug CMakeFiles/logout.dir/logout.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\logout.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = logout.exe
+  TARGET_IMPLIB = liblogout.dll.a
+  TARGET_PDB = logout.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -181,6 +220,8 @@ build Student_Management_System: phony Student_Management_System.exe
 
 build login: phony login.exe
 
+build logout: phony logout.exe
+
 build student: phony student.exe
 
 # =============================================================================
@@ -191,7 +232,7 @@ build student: phony student.exe
 #############################################
 # Folder: F:/Softwer Development Project/Student Management System/cmake-build-debug
 
-build all: phony Student_Management_System.exe login.exe student.exe
+build all: phony Student_Management_System.exe login.exe student.exe logout.exe
 
 # =============================================================================
 # Built-in targets

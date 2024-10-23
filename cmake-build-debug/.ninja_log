@@ -1,18 +1,10 @@
 # ninja log v6
-9	226	7511238033727085	CMakeFiles/Student_Management_System.dir/main.c.obj	591ae5fb9a7f8fc8
-227	400	7511238035899516	Student_Management_System.exe	81f89495bb5b34c9
-26	523	7512816920337043	CMakeFiles/Student_Management_System.dir/student.c.obj	b215a8e51f6f0ae
-22	524	7512816920296068	CMakeFiles/Student_Management_System.dir/login.c.obj	2c83f34f6a759310
-12	524	7512816920186815	CMakeFiles/Student_Management_System.dir/main.c.obj	591ae5fb9a7f8fc8
-524	827	7512816925314798	Student_Management_System.exe	5355cc65028186af
-11	656	7512820379072660	CMakeFiles/Student_Management_System.dir/student.c.obj	b215a8e51f6f0ae
-657	1068	7512820385534061	Student_Management_System.exe	5355cc65028186af
-8	385	7512821371733082	CMakeFiles/Student_Management_System.dir/student.c.obj	b215a8e51f6f0ae
-386	628	7512821375521793	Student_Management_System.exe	5355cc65028186af
-35	315	7512985837981440	CMakeFiles/Student_Management_System.dir/login.c.obj	2c83f34f6a759310
 25	319	7512985837869591	CMakeFiles/Student_Management_System.dir/main.c.obj	591ae5fb9a7f8fc8
-319	624	7512985840819426	Student_Management_System.exe	5355cc65028186af
-13	213	7512989605570706	CMakeFiles/Student_Management_System.dir/login.c.obj	2c83f34f6a759310
-214	447	7512989607585826	Student_Management_System.exe	5355cc65028186af
-19	120	7512990934508682	CMakeFiles/Student_Management_System.dir/login.c.obj	2c83f34f6a759310
-120	310	7512990935519601	Student_Management_System.exe	5355cc65028186af
+485	877	7513109023795566	Student_Management_System.exe	5355cc65028186af
+8	385	7512821371733082	CMakeFiles/Student_Management_System.dir/student.c.obj	b215a8e51f6f0ae
+25	484	7513109019196000	CMakeFiles/Student_Management_System.dir/login.c.obj	2c83f34f6a759310
+30	278	7513696338490422	CMakeFiles/Student_Management_System.dir/logout.c.obj	5a4b44e7565ac9e4
+24	283	7513696338430777	CMakeFiles/Student_Management_System.dir/login.c.obj	2c83f34f6a759310
+13	296	7513696338319253	CMakeFiles/Student_Management_System.dir/main.c.obj	591ae5fb9a7f8fc8
+8	238	7513697614846512	CMakeFiles/Student_Management_System.dir/main.c.obj	591ae5fb9a7f8fc8
+239	418	7513697617161547	Student_Management_System.exe	35f94efd6e79d7e4
