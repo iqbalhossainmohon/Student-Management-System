@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <string.h>
 #include "student.h"
@@ -21,14 +22,29 @@ void addStudent() {
     printf("Enter student name: ");
     fgets(newStudent.name, 100, stdin);
     newStudent.name[strcspn(newStudent.name, "\n")] = 0;
-    printf("Enter age: ");
-    scanf("%d", &newStudent.age);
-    printf("Enter grade: ");
-    scanf("%f", &newStudent.grade);
 
-    fprintf(file, "%d,%s,%d,%.2f\n", newStudent.rollNo, newStudent.name, newStudent.age, newStudent.grade);
+    printf("Enter Date of Birth: ");
+    scanf("%s", &newStudent.date_of_birth);
+    printf("Enter Father Name: ");
+    scanf("%s", &newStudent.fatherName);
+    printf("Enter Mother Name: ");
+    scanf("%s", &newStudent.motherName);
+    printf("Enter Your Class: ");
+    scanf("%s", &newStudent.studentClass);
+    printf("Enter Your Address: ");
+    scanf("%s", &newStudent.address);
+    printf("Enter Your phone: ");
+    scanf("%s", &newStudent.phone);
+    printf("Enter Your Gender: ");
+    scanf("%s", &newStudent.gender);
+
+    fprintf(file, "%d,%s,%s,%s,%s,%s,%s,%s,%s\n", newStudent.rollNo, newStudent.name,
+        newStudent.date_of_birth, newStudent.fatherName, newStudent.motherName, newStudent.studentClass,
+        newStudent.address, newStudent.phone, newStudent.gender);
+
+
     fclose(file);
-    printf("Student added successfully.\n");
+    printf("\nStudent added successfully.\n");
 }
 
 // Function to view all students
@@ -41,12 +57,18 @@ void viewStudents() {
         return;
     }
 
-    printf("\n================== Student Records ==================\n");
-    printf("Roll No \t Name \t\t\t Age \t Grade \t\n");
+    printf("\t\t\t\t=============== View Student Records ===============\n");
+    printf(" ID\t Name \t\t DateOfBirth \t FathersName \t MothersName"
+           "\t Class \t Address \t Phone \t\t Gender \n");
     char line[200];
     while (fgets(line, sizeof(line), file)) {
-        sscanf(line, "%d,%[^,],%d,%f", &student.rollNo, student.name, &student.age, &student.grade);
-        printf("%d \t\t %s \t\t %d \t  %.2f\n", student.rollNo, student.name, student.age, student.grade);
+        sscanf(line, "%d,%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,]", &student.rollNo,
+            student.name, &student.date_of_birth, &student.fatherName,
+            &student.motherName, &student.studentClass, &student.address, &student.phone, &student.gender);
+
+        printf("%d \t %s \t %s \t %s \t %s \t %s \t %s \t %s \t %s", student.rollNo, student.name,
+            student.date_of_birth, student.fatherName, student.motherName, student.studentClass, student.address,
+            student.phone, student.gender);
     }
     fclose(file);
 }
@@ -68,19 +90,37 @@ void updateStudent() {
 
     char line[200];
     while (fgets(line, sizeof(line), file)) {
-        sscanf(line, "%d,%[^,],%d,%f", &student.rollNo, student.name, &student.age, &student.grade);
+        sscanf(line, "%d,%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,]", &student.rollNo,
+            student.name, &student.date_of_birth, &student.fatherName, &student.motherName,
+            &student.studentClass, &student.address, &student.phone, &student.gender);
+
         if (student.rollNo == rollNo) {
             printf("Enter new name: ");
             getchar();  // Clear buffer
             fgets(student.name, 100, stdin);
             student.name[strcspn(student.name, "\n")] = 0;
-            printf("Enter new age: ");
-            scanf("%d", &student.age);
-            printf("Enter new grade: ");
-            scanf("%f", &student.grade);
+
+            printf("Enter Date of Birth: ");
+            scanf("%s", &student.date_of_birth);
+            printf("Enter Father Name: ");
+            scanf("%s", &student.fatherName);
+            printf("Enter Mother Name: ");
+            scanf("%s", &student.motherName);
+            printf("Enter Your Class: ");
+            scanf("%s", &student.studentClass);
+            printf("Enter Your Address: ");
+            scanf("%s", &student.address);
+            printf("Enter Your phone: ");
+            scanf("%s", &student.phone);
+            printf("Enter Your Gender: ");
+            scanf("%s", &student.gender);
+
+
             found = 1;
         }
-        fprintf(tempFile, "%d,%s,%d,%.2f\n", student.rollNo, student.name, student.age, student.grade);
+        fprintf(tempFile, "%d,%s,%s,%s,%s,%s,%s,%s,%s", student.rollNo, student.name,
+        student.date_of_birth, student.fatherName, student.motherName, student.studentClass,
+        student.address, student.phone, student.gender);
     }
 
     fclose(file);
@@ -91,7 +131,8 @@ void updateStudent() {
 
     if (found) {
         printf("Student record updated.\n");
-    } else {
+    }
+    else {
         printf("Student not found.\n");
     }
 }
@@ -113,10 +154,16 @@ void deleteStudent() {
 
     char line[200];
     while (fgets(line, sizeof(line), file)) {
-        sscanf(line, "%d,%[^,],%d,%f", &student.rollNo, student.name, &student.age, &student.grade);
+        sscanf(line, "%d,%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,]", &student.rollNo,
+            student.name, &student.date_of_birth, &student.fatherName, &student.motherName,
+            &student.studentClass, &student.address, &student.phone, &student.gender);
+
         if (student.rollNo != rollNo) {
-            fprintf(tempFile, "%d,%s,%d,%.2f\n", student.rollNo, student.name, student.age, student.grade);
-        } else {
+            fprintf(tempFile, "%d,%s,%s,%s,%s,%s,%s,%s,%s", student.rollNo, student.name,
+        student.date_of_birth, student.fatherName, student.motherName, student.studentClass,
+        student.address, student.phone, student.gender);
+        }
+        else {
             found = 1;
         }
     }
@@ -150,13 +197,19 @@ void searchStudent() {
 
     char line[200];
     while (fgets(line, sizeof(line), file)) {
-        sscanf(line, "%d,%[^,],%d,%f", &student.rollNo, student.name, &student.age, &student.grade);
-        if (student.rollNo == rollNo) {
-            printf("\n================== Search Student Record ================== \n"
-                   " Roll No \t\t Name \t\t\t Age \t Grade \n");
+        sscanf(line, "%d,%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,]", &student.rollNo,
+            student.name, &student.date_of_birth, &student.fatherName, &student.motherName,
+            &student.studentClass, &student.address, &student.phone, &student.gender);
 
-            printf(" %d \t\t\t %s \t\t %d \t %.2f\n",
-                student.rollNo, student.name, student.age, student.grade);
+
+        if (student.rollNo == rollNo) {
+            printf("\t\t\t=============== View Student Records ===============\n");
+            printf(" ID\t Name \t\t DateOfBirth \t FathersName \t MothersName"
+           "\t Class \t Address \t Phone \t\t Gender \n");
+
+            printf("%d \t %s \t %s \t %s \t %s \t %s \t %s \t %s \t %s", student.rollNo, student.name,
+            student.date_of_birth, student.fatherName, student.motherName, student.studentClass, student.address,
+            student.phone, student.gender);
             found = 1;
             break;
         }
@@ -168,3 +221,5 @@ void searchStudent() {
         printf("Student not found.\n");
     }
 }
+
+

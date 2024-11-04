@@ -5,10 +5,10 @@
 struct User {
     char username[50];
     char password[50];
-    char email[20];
+    char email[30];
 
-    char fristName[15];
-    char lestName[15];
+    char fristName[50];
+    char lestName[50];
     char gender[10];
     char phone[20];
 };
