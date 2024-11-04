@@ -11,7 +11,7 @@ void saveUser(struct User user) {
     FILE *file = fopen(USER_FILE, "a");
     if (file != NULL) {
         fprintf(file, "%s, %s, %s, %s, %s, %s, %s\n", user.email,
-            user.username, user.fristName, user.lestName, user.gender, user.phone, user.password);
+            user.username, user.firstName, user.lastName, user.gender, user.phone, user.password);
         fclose(file);
     }
 }
@@ -30,7 +30,7 @@ int loginUser(char *email, char *password) {
     while (fgets(line, sizeof(line), file)) {
 
         sscanf(line, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%s", user.email,
-               user.username, user.fristName, user.lestName, user.gender, user.phone, user.password);
+               user.username, user.firstName, user.lastName, user.gender, user.phone, user.password);
         if (strcmp(user.email, email) == 0 && strcmp(user.password, password) == 0) {
             fclose(file);
             setLoginStatus(1);  // Set user as logged in
@@ -46,9 +46,9 @@ void registerUser() {
     struct User newUser;
 
     printf("Enter your First Name: ");
-    scanf("%s", newUser.fristName);
-    printf("Enter your Lest Name: ");
-    scanf("%s", newUser.lestName);
+    scanf("%s", newUser.firstName);
+    printf("Enter your Last Name: ");
+    scanf("%s", newUser.lastName);
 
     printf("Enter email address: ");
     scanf("%s", newUser.email);

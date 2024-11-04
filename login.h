@@ -7,8 +7,8 @@ struct User {
     char password[50];
     char email[30];
 
-    char fristName[50];
-    char lestName[50];
+    char firstName[50];
+    char lastName[50];
     char gender[10];
     char phone[20];
 };
