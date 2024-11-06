@@ -9,7 +9,9 @@ add_executable(Student_Management_System main.c
         login.h
         student.h
         logout.c
-        logout.h)
+        logout.h
+        grading.c
+        grading.h)
 add_executable(login login.c)
 add_executable(student student.c)
 add_executable(logout logout.c)

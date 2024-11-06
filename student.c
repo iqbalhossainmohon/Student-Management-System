@@ -2,9 +2,12 @@
 #include <stdio.h>
 #include <string.h>
 #include "student.h"
+#include "grading.h"
 
 // File path for student data
 #define STUDENT_FILE "students.csv"
+#define GRADES_FILE "student_grades.csv"
+
 
 // Function to add a new student
 void addStudent() {
@@ -29,23 +32,46 @@ void addStudent() {
     scanf("%s", &newStudent.fatherName);
     printf("Enter Mother Name: ");
     scanf("%s", &newStudent.motherName);
-    printf("Enter Your Class: ");
+    printf("Enter Class: ");
     scanf("%s", &newStudent.studentClass);
-    printf("Enter Your Address: ");
+    printf("Enter Address: ");
     scanf("%s", &newStudent.address);
-    printf("Enter Your phone: ");
+    printf("Enter Phone: ");
     scanf("%s", &newStudent.phone);
-    printf("Enter Your Gender: ");
+    printf("Enter Gender: ");
     scanf("%s", &newStudent.gender);
 
+    printf("Enter marks for Bangla: ");
+    scanf("%f", &newStudent.bangla);
+    printf("Enter marks for English: ");
+    scanf("%f", &newStudent.english);
+    printf("Enter marks for Math: ");
+    scanf("%f", &newStudent.math);
+    printf("Enter marks for Physics: ");
+    scanf("%f", &newStudent.physics);
+    printf("Enter marks for Chemistry: ");
+    scanf("%f", &newStudent.chemistry);
+
+    // Calculate CGPA
+    newStudent.cgpa = calculateCGPA(newStudent.bangla, newStudent.english, newStudent.math, newStudent.physics, newStudent.chemistry);
+
+    // Save general info
     fprintf(file, "%d,%s,%s,%s,%s,%s,%s,%s,%s\n", newStudent.rollNo, newStudent.name,
-        newStudent.date_of_birth, newStudent.fatherName, newStudent.motherName, newStudent.studentClass,
-        newStudent.address, newStudent.phone, newStudent.gender);
-
-
+            newStudent.date_of_birth, newStudent.fatherName, newStudent.motherName,
+            newStudent.studentClass, newStudent.address, newStudent.phone, newStudent.gender);
     fclose(file);
+
+    // Save grades
+    file = fopen(GRADES_FILE, "a");
+    fprintf(file, "%d,%s,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\n", newStudent.rollNo, newStudent.name,
+            newStudent.bangla, newStudent.english, newStudent.math, newStudent.physics, newStudent.chemistry, newStudent.cgpa);
+    fclose(file);
+
     printf("\nStudent added successfully.\n");
 }
+
+
+
 
 // Function to view all students
 void viewStudents() {
@@ -221,5 +247,4 @@ void searchStudent() {
         printf("Student not found.\n");
     }
 }
-
 

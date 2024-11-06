@@ -2,6 +2,7 @@
 #include "login.h"
 #include "student.h"
 #include "logout.h"
+#include "grading.h"
 
 int main() {
     int choice;
@@ -12,7 +13,7 @@ int main() {
         if (isLoggedIn()) {
             // Menu options when the user is logged in
             printf("3. Add Student\n4. View Students\n5. Update Student\n"
-                   "6. Delete Student\n7. Search Student\n8. Logout\n9. Exit\n");
+                   "6. Delete Student\n7. Search Student\n8. view Student Grades\n9. Logout\n10. Exit\n");
         } else {
             // Menu options when the user is not logged in
             printf("1. Register\n2. Login\n");
@@ -52,9 +53,12 @@ int main() {
                     searchStudent();
                 break;
                 case 8:
-                    logout();
+                    viewStudentGrades();
                 break;
                 case 9:
+                    logout();
+                break;
+                case 10:
                     exit(0);
                 default:
                     printf("Invalid choice.\n");

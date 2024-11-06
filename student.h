@@ -16,6 +16,9 @@ struct Student {
     char address[100];
     char phone[15];
     char gender[20];
+
+    float bangla, english, math, physics, chemistry;
+    float cgpa;
 };
 
 void addStudent();
@@ -25,4 +28,3 @@ void deleteStudent();
 void searchStudent();
 
 #endif
-

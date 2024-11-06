@@ -73,6 +73,12 @@ build CMakeFiles/Student_Management_System.dir/logout.c.obj: C_COMPILER__Student
   OBJECT_DIR = CMakeFiles\Student_Management_System.dir
   OBJECT_FILE_DIR = CMakeFiles\Student_Management_System.dir
 
+build CMakeFiles/Student_Management_System.dir/grading.c.obj: C_COMPILER__Student_Management_System_unscanned_Debug F$:/Softwer$ Development$ Project/Student$ Management$ System/grading.c || cmake_object_order_depends_target_Student_Management_System
+  DEP_FILE = CMakeFiles\Student_Management_System.dir\grading.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Student_Management_System.dir
+  OBJECT_FILE_DIR = CMakeFiles\Student_Management_System.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Student_Management_System
@@ -81,7 +87,7 @@ build CMakeFiles/Student_Management_System.dir/logout.c.obj: C_COMPILER__Student
 #############################################
 # Link the executable Student_Management_System.exe
 
-build Student_Management_System.exe: C_EXECUTABLE_LINKER__Student_Management_System_Debug CMakeFiles/Student_Management_System.dir/main.c.obj CMakeFiles/Student_Management_System.dir/login.c.obj CMakeFiles/Student_Management_System.dir/student.c.obj CMakeFiles/Student_Management_System.dir/logout.c.obj
+build Student_Management_System.exe: C_EXECUTABLE_LINKER__Student_Management_System_Debug CMakeFiles/Student_Management_System.dir/main.c.obj CMakeFiles/Student_Management_System.dir/login.c.obj CMakeFiles/Student_Management_System.dir/student.c.obj CMakeFiles/Student_Management_System.dir/logout.c.obj CMakeFiles/Student_Management_System.dir/grading.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Student_Management_System.dir
